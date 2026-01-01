@@ -153,3 +153,33 @@ footer {
   padding: 0rem 0 !important; /* Reduce vertical padding to make footer thinner */
   font-size: 0.9rem; /* Optional: make text smaller */
 }
+
+.skills {
+  margin-top: 14px;
+}
+
+.skill-pill {
+  display: inline-block;
+  padding: 3px 7px;
+  margin: 3px 4px 0 0;
+  border-radius: 999px;
+  background-color: #ffffff;
+  color: #222;
+  font-size: 0.5rem;
+  font-weight: 500;
+  border: 1px solid #ddd;
+}
+
+.intro {
+  font-size: 0.4rem; /* scales EVERYTHING inside */
+  text-align: left;
+}
+
+.intro h2 {
+  font-size: 1rem;
+}
+
+.intro h3 {
+  font-size: 0.5rem;
+}
+

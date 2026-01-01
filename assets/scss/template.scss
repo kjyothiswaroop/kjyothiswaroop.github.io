@@ -54,6 +54,10 @@ body {
   padding: 1rem 0;
 }
 
+.home-section.wg-portfolio {
+  margin-top: 2rem;
+}
+
 .home-section.wg-about-avatar {
   padding: 0;
 }
@@ -128,9 +132,9 @@ ul.network-icon .big-icon {
   font-size: 0.8rem;
 }
 
-// Hide avatar on homepage
-.wg-about-avatar .avatar {
-  display: none;
-}
+// // Hide avatar on homepage
+// .wg-about-avatar .avatar {
+//   display: none;
+// }
 
 @import "custom";

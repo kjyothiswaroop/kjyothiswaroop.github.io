@@ -25,7 +25,7 @@ bio: My research interests include distributed robotics, mobile computing and pr
 #- Computational Linguistics
 #- Information Retrieval
 
-#education:
+# education:
 #  courses:
 #  - course: PhD in Artificial Intelligence
 #    institution: Stanford University
