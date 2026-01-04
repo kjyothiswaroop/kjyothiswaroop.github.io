@@ -1,7 +1,7 @@
 ---
 type: project
-title: Franka Ball Catcher
-summary: Trajectory Prediction and Ball Interception Using Vision 
+title: Robotic Pen Grabber
+summary: Object Detection and Retrival using Interbotix Robot Arm.
 tags:
   - Python
   - OpenCV
@@ -9,6 +9,7 @@ tags:
   - Realsense
 
 date: 2026-01-03
+weight: 2
 share: false
 links:
   - name: Code

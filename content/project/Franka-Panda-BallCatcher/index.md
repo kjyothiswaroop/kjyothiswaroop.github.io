@@ -9,6 +9,7 @@ tags:
   - Trajectory Prediction
 
 date: 2026-01-03
+weight: 1
 share: false
 links:
   - name: Code
