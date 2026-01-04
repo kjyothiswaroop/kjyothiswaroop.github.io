@@ -6,8 +6,6 @@ tags:
   - ROS2
   - OpenCV
   - YOLO
-  - Realsense
-  - ZED2i
   - Trajectory Prediction
 
 date: 2026-01-03

@@ -1,0 +1,8 @@
+{{ $page := . }}
+
+{{ $tags := $page.Params.tags }}
+{{ if $tags }}
+  {{ return true }}
+{{ else }}
+  {{ return false }}
+{{ end }}

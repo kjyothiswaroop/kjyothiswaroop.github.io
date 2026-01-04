@@ -2,6 +2,7 @@
 
 {{/* Dynamic view adjusts to content type. */}}
 {{ $has_attachments := partial "functions/has_attachments" $item }}
+{{ $has_tags := partial "functions/has_tags" $item }}
 
 {{ $link := $item.RelPermalink }}
 {{ $target := "" }}
@@ -66,7 +67,16 @@
   </a>
   {{ end }}
 
+  {{ if $has_tags }}
+  <div class="card-tags">
+    {{ range $item.Params.tags }}
+      <span class="tag-pill">{{ . }}</span>
+    {{ end }}
+  </div>
+  {{ end }}
+
   {{ if $has_attachments }}
+  <div class="card-divider"></div>
   <div class="btn-links">
     {{ partial "page_links" (dict "page" $item "is_list" 1) }}
   </div>
