@@ -1,0 +1,59 @@
+{{- define "main" -}}
+
+<article class="article">
+  {{ partial "page_header.html" . }}
+
+  <div class="article-container">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <!-- Portfolio Grid View - Matching homepage masonry layout -->
+          <div class="isotope projects-container js-layout-masonry">
+            {{ $projects := where site.RegularPages "Type" "project" }}
+            
+            {{ range $projects }}
+              <div class="project-card project-item isotope-item">
+                <div class="card">
+                  {{ $images := where .Resources "ResourceType" "image" }}
+                  {{ if $images }}
+                    {{ $image := index $images 0 }}
+                    {{ $img := $image.Resize "550x550" }}
+                    <a href="{{ .Permalink }}" class="card-image hover-overlay">
+                      <img src="{{ $img.RelPermalink }}" height="550" width="550" alt="{{ .Title }}" class="img-responsive" loading="lazy">
+                    </a>
+                  {{ end }}
+                  
+                  <div class="card-text">
+                    <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                    
+                    {{ if .Summary }}
+                      <div class="article-style">
+                        <p>{{ .Summary }}</p>
+                      </div>
+                    {{ end }}
+                    
+                    {{ if .Params.tags }}
+                      <div class="card-tags">
+                        {{ range .Params.tags }}
+                          <span class="tag-pill">{{ . }}</span>
+                        {{ end }}
+                      </div>
+                    {{ end }}
+                    
+                    <div class="card-divider"></div>
+                    
+                    <div class="btn-links">
+                      <a href="{{ .Permalink }}" class="btn btn-outline-primary btn-sm">View Project</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+{{- end -}}

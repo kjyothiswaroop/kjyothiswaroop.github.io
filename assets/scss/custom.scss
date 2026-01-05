@@ -12,7 +12,7 @@ a {
 .nav-logo-wrapper a {
   display: flex;
   align-items: center;
-  font-size: 1.25rem;
+  font-size: 1.0rem;
   font-weight: 700;
   letter-spacing: -0.03em;
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
@@ -29,7 +29,7 @@ a {
 .nav-logo-wrapper .nav-logo-subtitle {
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
   color: gray;
-  font-size: 1.0rem;
+  font-size: 0.8rem;
   font-weight: 500;
   border-left: 1px solid gray;
   padding-left: 0.75rem;
@@ -96,7 +96,7 @@ a {
 }
 
 .nav-link {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 400;
   font-family: var(--font-nav);
   text-decoration: none !important;
@@ -184,6 +184,10 @@ footer {
 }
 
 .card{
+  min-height: 200px;
+}
+
+.masonry{
   min-height: 200px;
 }
 

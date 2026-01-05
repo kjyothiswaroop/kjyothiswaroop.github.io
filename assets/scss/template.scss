@@ -109,7 +109,91 @@ ul.network-icon .big-icon {
 
 // Make portfolio section wider for larger project cards
 .home-section.wg-portfolio .container {
-  max-width: 1500px;
+  max-width: 1200px;
+}
+
+// Make project list page container wider like the portfolio section
+.article-container .container {
+  max-width: 1200px;
+}
+
+// ONLY apply styling to article container (project list page)
+// Do NOT touch the home-section - let theme JavaScript handle it
+.article-container .isotope.projects-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+// Responsive: 2 columns on tablets
+@media screen and (max-width: 1199px) {
+  .article-container .isotope.projects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Responsive: 1 column on mobile
+@media screen and (max-width: 768px) {
+  .article-container .isotope.projects-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Card styling for project list page only
+.article-container .isotope.projects-container .project-card {
+  width: auto !important;
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-container .isotope.projects-container .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 !important;
+}
+
+.article-container .isotope.projects-container .card-image {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.article-container .isotope.projects-container .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-container .isotope.projects-container .card-text {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-container .isotope.projects-container .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-container .isotope.projects-container .card-text {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+// Apply same isotope styles to home section portfolio for consistency
+// Note: Let the homepage use its original layout/JavaScript, don't override
+
+// Ensure article view displays properly
+.article-container .isotope.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
 }
 
 // Custom avatar size on homepage

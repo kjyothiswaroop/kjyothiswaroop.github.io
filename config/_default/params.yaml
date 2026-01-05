@@ -18,7 +18,7 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'A highly-customizable Hugo blog theme powered by Wowchemy website builder.'
+    description: 'Jyothiswaroop Portfolio.'
     twitter: 'GetResearchDev'
   analytics:
     google_analytics: ''
@@ -107,10 +107,10 @@ extensions:
   academicons:
     enable: false
 
-logo_name: Jyothi Swaroop
-logo_degree: M.S. Robotics
-logo_school_full: Northwestern University
-logo_school_compact: 'Northwestern'
+logo_name: Jyothi Swaroop Kasina
+# logo_degree: M.S. Robotics
+# logo_school_full: Northwestern University
+# logo_school_compact: 'Northwestern'
 
 social:
   - icon: envelope
