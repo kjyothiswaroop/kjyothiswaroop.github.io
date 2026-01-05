@@ -17,6 +17,7 @@ links:
     icon: github
     icon_pack: fab
 # image: "https://www.youtube.com/watch?v=KEsO1CyqTHA"
+author: Jyothi Swaroop
 ---
 
 Franka Emika Panda Robot Arm is catching a ball.

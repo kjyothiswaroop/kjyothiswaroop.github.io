@@ -1,48 +1,67 @@
 {{- define "main" -}}
 
 <article class="article article-project">
+  <div class="article-container project-single">
 
-  {{ partial "page_header.html" . }}
+    <header class="project-hero">
+      <h1 class="project-title">{{ .Params.project_title | default .Title }}</h1>
 
-  <div class="article-container">
+      {{/* Author | Date */}}
+      {{ $author := .Params.author }}
+      {{ with .Params.authors }}
+        {{ if and (not $author) (gt (len .) 0) }}
+          {{ $author = index . 0 }}
+        {{ end }}
+      {{ end }}
+      <p class="project-meta">{{ if $author }}{{ $author }} | {{ end }}{{ .Date.Format "Jan 2, 2006" }}</p>
 
-    <div class="article-style">
+      {{ with .Params.links }}
+      <div class="project-links">
+        {{ range . }}
+          <a class="project-link-btn" href="{{ .url | safeURL }}" target="_blank" rel="noopener">
+            <span class="project-link-icon">
+              <i class="{{ .icon_pack | default "fab" }} fa-{{ .icon | default "link" }}" aria-hidden="true"></i>
+            </span>
+            <span>{{ .name }}</span>
+          </a>
+        {{ end }}
+      </div>
+      {{ end }}
+    </header>
+
+    {{ $video := or .Params.video .Params.video_url }}
+    {{ if $video }}
+      {{ $is_embed := or (strings.Contains $video "youtube.com") (strings.Contains $video "youtu.be") (strings.Contains $video "vimeo.com") }}
+      <div class="project-embed">
+        {{ if $is_embed }}
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="{{ $video | safeURL }}" allowfullscreen loading="lazy"></iframe>
+          </div>
+        {{ else }}
+          <video controls playsinline preload="metadata">
+            <source src="{{ $video | safeURL }}" type="video/mp4">
+          </video>
+        {{ end }}
+      </div>
+    {{ else }}
+      {{ $images := where .Resources "ResourceType" "image" }}
+      {{ with index $images 0 }}
+        {{ $img := .Resize "480x" }}
+        <div class="project-image">
+          <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}">
+        </div>
+      {{ end }}
+    {{ end }}
+
+    {{ if and .Params.toc (ne .TableOfContents "") }}
+      <div class="project-toc">{{ .TableOfContents }}</div>
+    {{ end }}
+
+    <div class="article-style project-body">
       {{ .Content }}
     </div>
 
     {{ partial "page_footer" . }}
-
-    <div class="project-related-pages content-widget-hr">
-      {{ $page := . }}
-      {{ $project := .File.ContentBaseName }}
-
-      {{ $items := where (where site.RegularPages "Type" "post") ".Params.projects" "intersect" (slice $project) }}
-      {{ $count := len $items }}
-      {{ if ge $count 1 }}
-        <h2>{{ (i18n "posts") }}</h2>
-        {{ range $index, $item := $items }}
-          {{ partial "functions/render_view" (dict "page" $ "item" . "view" (site.Params.projects.post_view | default "compact") "index" $index) }}
-        {{end}}
-      {{ end }}
-
-      {{ $items := where (where site.RegularPages "Type" "publication") ".Params.projects" "intersect" (slice $project) }}
-      {{ $pubs_len := len $items }}
-      {{ if ge $pubs_len 1 }}
-        <h2>{{ (i18n "publications") }}</h2>
-        {{ range $index, $item := $items }}
-          {{ partial "functions/render_view" (dict "page" $ "item" . "view" (site.Params.projects.publication_view | default "compact") "index" $index) }}
-        {{end}}
-      {{ end }}
-
-      {{ $items := where (where site.RegularPages "Type" "event") ".Params.projects" "intersect" (slice $project) }}
-      {{ $talks_len := len $items }}
-      {{ if ge $talks_len 1 }}
-        <h2>{{ (i18n "talks") }}</h2>
-        {{ range $index, $item := $items }}
-          {{ partial "functions/render_view" (dict "page" $ "item" . "view" (site.Params.projects.talk_view | default "compact") "index" $index) }}
-        {{end}}
-      {{ end }}
-    </div>
   </div>
 </article>
 {{- end -}}
