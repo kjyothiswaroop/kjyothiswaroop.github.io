@@ -29,39 +29,57 @@
       {{ end }}
     </header>
 
-    {{ $video := or .Params.video .Params.video_url }}
-    {{ if $video }}
-      {{ $is_embed := or (strings.Contains $video "youtube.com") (strings.Contains $video "youtu.be") (strings.Contains $video "vimeo.com") }}
-      <div class="project-embed">
-        {{ if $is_embed }}
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="{{ $video | safeURL }}" allowfullscreen loading="lazy"></iframe>
+    <div class="project-layout">
+      <div class="project-main">
+        {{ $video := or .Params.video .Params.video_url }}
+        {{ if $video }}
+          {{ $is_embed := or (strings.Contains $video "youtube.com") (strings.Contains $video "youtu.be") (strings.Contains $video "vimeo.com") }}
+          <div class="project-embed">
+            {{ if $is_embed }}
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ $video | safeURL }}" allowfullscreen loading="lazy"></iframe>
+              </div>
+            {{ else }}
+              <video controls playsinline preload="metadata">
+                <source src="{{ $video | safeURL }}" type="video/mp4">
+              </video>
+            {{ end }}
           </div>
         {{ else }}
-          <video controls playsinline preload="metadata">
-            <source src="{{ $video | safeURL }}" type="video/mp4">
-          </video>
+          {{ $images := where .Resources "ResourceType" "image" }}
+          {{ with index $images 0 }}
+            {{ $img := .Resize "480x" }}
+            <div class="project-image">
+              <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}">
+            </div>
+          {{ end }}
         {{ end }}
-      </div>
-    {{ else }}
-      {{ $images := where .Resources "ResourceType" "image" }}
-      {{ with index $images 0 }}
-        {{ $img := .Resize "480x" }}
-        <div class="project-image">
-          <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}">
+
+        <div class="article-style project-body">
+          {{ .Content }}
         </div>
-      {{ end }}
-    {{ end }}
+      </div>
 
-    {{ if and .Params.toc (ne .TableOfContents "") }}
-      <div class="project-toc">{{ .TableOfContents }}</div>
-    {{ end }}
+      <aside class="project-sidebar">
+        {{ if ne .TableOfContents "" }}
+          <div class="sidebar-toc">
+            <h3>Table of Contents</h3>
+            {{ .TableOfContents }}
+          </div>
+        {{ end }}
 
-    <div class="article-style project-body">
-      {{ .Content }}
+        {{ with .Params.tags }}
+          <div class="sidebar-tags">
+            <h3>Tags</h3>
+            <div class="tag-list">
+              {{ range . }}
+                <a href="{{ (printf "/tag/%s" (. | urlize)) }}" class="tag-item">{{ . }}</a>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      </aside>
     </div>
-
-    {{ partial "page_footer" . }}
   </div>
 </article>
 {{- end -}}
