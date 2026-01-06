@@ -1,6 +1,6 @@
 # IDEs
 .idea/
-
+.vscode/
 # Hugo
 resources/
 public/
