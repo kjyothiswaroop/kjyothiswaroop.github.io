@@ -220,3 +220,67 @@ footer {
   margin: 0.8rem 0 0.6rem;
   border-top: 1px solid rgba(2, 2, 2, 0.08);
 }
+
+/* ============================================
+   COMPACT SYSTEM COMPONENTS TABLE
+   ============================================ */
+
+/* Target tables that come after "System Components" heading */
+h2#system-components + table,
+h2 + table {
+  font-size: 1em;
+  line-height: 1.1;
+  border-collapse: collapse !important;
+  margin-top: 1rem;
+  border: 1.25px solid #ebe9e9 !important;
+  width: auto;
+  
+  th, td {
+    padding: 3px 6px;
+    text-align: left;
+    border: 1px solid #fffbfb !important;
+  }
+  
+  th {
+    font-weight: 700;
+    background-color: #eef1f5;
+    color: #1f2933;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #f8f9fb;
+  }
+  
+  tbody tr:hover {
+    background-color: #e6eef7;
+  }
+}
+
+/* ============================================
+   REDUCE GAP AFTER HORIZONTAL RULES
+   ============================================ */
+
+hr {
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+hr + h2,
+hr + h3 {
+  margin-top: 0.5rem;
+}
+
+/* ============================================
+   H3 STYLING - NOT BOLD, ITALICIZED
+   ============================================ */
+
+.project-body h3 {
+  font-size: 1.2em;
+  font-weight: 5 !important;
+  color: #6963a0 !important;
+  font-style: italic !important;
+
+}
+
+.project-body h3 code {
+  color: #6963a0 !important;
+}

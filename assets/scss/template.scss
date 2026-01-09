@@ -298,21 +298,28 @@ ul.network-icon .big-icon {
 }
 
 .project-sidebar {
-  width: 260px;
+  width: 300px;
   flex-shrink: 0;
   position: sticky;
   top: 5rem;
-  height: fit-content;
-  max-height: calc(100vh - 6rem);
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.sidebar-toc,
-.sidebar-tags {
+.sidebar-toc {
   background: rgba(0, 0, 0, 0.02);
   border-radius: 12px;
   padding: 1.25rem;
   margin-bottom: 1.5rem;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.sidebar-tags {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 0;
 }
 
 .dark .sidebar-toc,
@@ -397,7 +404,7 @@ ul.network-icon .big-icon {
 
 .project-body {
   font-family: "Times New Roman", Times, serif !important;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   line-height: 1.65;
   text-align: left;
   width: 100%;
