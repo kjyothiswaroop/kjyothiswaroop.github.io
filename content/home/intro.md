@@ -1,6 +1,6 @@
 ---
 # Use the Intro widget of the Blog template
-widget: 
+widget: blank
 
 # This file represents a page section.
 headless: true
@@ -9,14 +9,14 @@ headless: true
 weight: 100
 
 author: admin
-#design:
-#  background:
-#    color: '#090a0b'
-#    text_color_light: true
-#    video:
-#      path:  # enter filename of a video in /assets/media
-#  css_class: fullscreen
+
+design:
+  columns: 1
+
 ---
+
+{{< intro img="/uploads/avatar-admin.jpg" email="jyothikasina2026@u.northwestern.edu" linkedin="https://www.linkedin.com/in/kjswaroop-robotics/" github="https://github.com/kjyothiswaroop" >}}
+
 
 <!-- <div class="intro">
   <h2>Jyothi Swaroop</h2>
