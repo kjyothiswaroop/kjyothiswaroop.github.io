@@ -13,11 +13,13 @@
             {{ range $projects }}
               <div class="project-card project-item isotope-item">
                 <div class="card">
-                  {{ $images := where .Resources "ResourceType" "image" }}
-                  {{ if $images }}
-                    {{ $image := index $images 0 }}
-                    {{ $img := $image.Resize "550x550" }}
-                    <a href="{{ .Permalink }}" class="card-image hover-overlay">
+                  {{ $image := .Resources.GetMatch "featured*" }}
+                  {{ if not $image }}
+                    {{ $images := where .Resources "ResourceType" "image" }}
+                    {{ $image = index $images 0 }}
+                  {{ end }}
+                  {{ if $image }}<a href="{{ .Permalink }}" class="card-image hover-overlay">
+                      {{ $img := $image.Resize "550x550" }}
                       <img src="{{ $img.RelPermalink }}" height="550" width="550" alt="{{ .Title }}" class="img-responsive" loading="lazy">
                     </a>
                   {{ end }}

@@ -24,7 +24,7 @@ project_title: 'Franka Ball Catcher: Vision-Based Ball detection, prediction and
 
 -------------------------------------------------------------------------
 ## Overview
-This project develops a **vision-based object detection and interception system** using a **Franka Emika Panda robotic arm**.An external camera tracks a moving ball in real time, while a trajectory prediction module estimates its future position and guides the robot to intercept and catch the ball. The system integrates perception, prediction, and control to enable autonomous, dynamic manipulation in a very short time of ~**`1s.`**
+This project develops a **vision-based object detection and interception system** using a **Franka Emika Panda robotic arm**. An external camera tracks a moving ball in real time, while a trajectory prediction module estimates its future position and guides the robot to intercept and catch the ball. The system integrates perception, prediction, and control to enable autonomous, dynamic manipulation in a very short time of ~**`1s.`**
 
 The major complexities in the system are :
  - A short time of flight of the ball
