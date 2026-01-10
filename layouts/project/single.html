@@ -40,7 +40,7 @@
                 <iframe class="embed-responsive-item" src="{{ $video | safeURL }}" allowfullscreen loading="lazy"></iframe>
               </div>
             {{ else }}
-              <video controls playsinline preload="metadata">
+              <video controls playsinline preload="metadata" autoplay muted loop>
                 <source src="{{ $video | safeURL }}" type="video/mp4">
               </video>
             {{ end }}
