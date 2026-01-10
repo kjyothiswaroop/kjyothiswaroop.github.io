@@ -4,4 +4,6 @@ show_breadcrumb: false
 show_date: false
 share: false
 ---
-<iframe  src="/uploads/resume.pdf#zoom=100" width="100%" height="950px" style="border: none;"></iframe>
+<div style="max-width: 900px; margin: 0 auto;">
+  <iframe src="/uploads/resume.pdf#view=FitW" width="100%" height="1100px" style="border: none; display: block;"></iframe>
+</div>

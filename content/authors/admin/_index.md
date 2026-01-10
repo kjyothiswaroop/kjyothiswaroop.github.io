@@ -13,7 +13,7 @@ status:
   icon: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: M.S. Robotics student with 3+ years of professional experience in multi-agent systems and warehouse robotics.
 
 social:
   - icon: envelope
@@ -36,10 +36,16 @@ social:
 
 ---
 
-Jyothi Swaroop Kasina is a student in the MS Robotics program at Northwestern. He is a seasoned Robotics Engineer with 3 years of professional work experience in the area of Multi Agent Systems for Warehouse Robotics.
+Jyothi Swaroop Kasina is a graduate student in the M.S. Robotics program at Northwestern University. With 3+ years of professional experience in multi-agent systems and warehouse robotics, he brings both academic rigor and practical engineering expertise to complex robotic challenges.
 
-Specializes in :
+His professional background includes designing and deploying scalable solutions for autonomous warehouse systems, where he developed a deep expertise in coordinating multiple robots in dynamic, real-world environments.
 
-ROS 2 | SLAM | Path Planning 
+## Skills
+
+<span style="display: inline-block; background: #000203ff; color: white; padding: 4px 10px; border-radius: 15px; margin: 4px; font-weight: 500; font-size: 0.85em;">ROS 2</span>
+<span style="display: inline-block; background: #000203ff; color: white; padding: 4px 10px; border-radius: 15px; margin: 4px; font-weight: 500; font-size: 0.85em;">SLAM</span>
+<span style="display: inline-block; background: #000203ff; color: white; padding: 4px 10px; border-radius: 15px; margin: 4px; font-weight: 500; font-size: 0.85em;">Path Planning</span>
+<span style="display: inline-block; background: #000203ff; color: white; padding: 4px 10px; border-radius: 15px; margin: 4px; font-weight: 500; font-size: 0.85em;">Motion Planning</span>
+<span style="display: inline-block; background: #000203ff; color: white; padding: 4px 10px; border-radius: 15px; margin: 4px; font-weight: 500; font-size: 0.85em;">Multi-Agent Systems</span>
 
 {{< icon name="download" pack="fas" >}} {{< staticref "uploads/resume.pdf" "newtab" >}}Download{{< /staticref >}} my resume as a PDF.

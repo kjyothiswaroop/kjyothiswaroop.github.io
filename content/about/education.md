@@ -29,8 +29,13 @@ experience:
     location: Evanston, IL
     date_start: '2025-09-01'
     date_end: ''
-    description: 
-
+    description: |2-
+        * CGPA - 3.925/4.0
+        * Coursework
+            * Embedded Systems and Robotics(ROS2)
+            * Robotic Manipulation
+            * ML and AI in Robotics
+            * Theory of Machines - Dynamics 
   - title: B.Tech Electrical Engineering
     company: Indian Institute of Technology (Indian School of Mines) Dhanbad
     company_url: ''
@@ -39,6 +44,7 @@ experience:
     date_start: '2018-01-01'
     date_end: '2022-05-12'
     description: |2-
+        * CGPA - 8.54 / 10.0
         * Head of Robotics Club
         * Badminton Team 
 

@@ -29,7 +29,9 @@ experience:
     location: Tokyo, Japan
     date_start: '2024-09-25'
     date_end: '2025-07-11'
-    description: Worked on Fleet Management systems for Autonomous Forklifts
+    description: |2-
+      * Worked on Fleet Management systems for Autonomous Forklifts
+      * Implemented error recovery pipelines
 
   - title: Robotics Engineer
     company: Addverb Technologies
@@ -38,7 +40,11 @@ experience:
     location: Noida, India
     date_start: '2022-08-01'
     date_end: '2024-06-21'
-    description: Worked on Fleet Management Systems for AGVs
+    description: |2-
+      * Worked on Multi-Agent Path Planning for AGVs
+      * Implemented behaviour trees for easier handling of states
+      * Deployed over 150 robots across 4 countries
+      * Worked independently on two greenfield projects
 
 design:
   columns: '1'
