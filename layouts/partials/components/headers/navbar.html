@@ -165,11 +165,28 @@ or .Params.header.navbar.enable }}
 
           {{ end }}
         </ul>
+
+        {{/* Social links for mobile dropdown - below 992px */}}
+        <ul class="navbar-nav d-lg-none" style="list-style: none;">
+          {{ range where (where (where site.Pages "Section" "authors") ".Params.superuser" true) ".Params.social" "!=" nil
+          }}
+          {{ range where .Params.social ".display.header" true }}
+          {{ $social_link := partial "functions/get_social_link" . }}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ $social_link.link | safeURL }}" {{ $social_link.target | safeHTMLAttr
+              }} aria-label="{{ $social_link.aria_label }}">
+              <span>{{ $social_link.aria_label | humanize }}</span>
+            </a>
+          </li>
+          {{ end }}
+          {{ end }}
+        </ul>
       </div><!-- /.navbar-collapse -->
 
       <div class="nav-contact-icons pl-md-2">
 
         {{/* Display any social links that the superuser chose to display in the header. */}}
+        <div class="d-none d-lg-flex">
         {{ range where (where (where site.Pages "Section" "authors") ".Params.superuser" true) ".Params.social" "!=" nil
         }}
         {{ range where .Params.social ".display.header" true }}
@@ -182,20 +199,21 @@ or .Params.header.navbar.enable }}
         </a>
         {{ end }}
         {{ end }}
+        </div>
 
         {{/* Override: hide search icon if provider is Docsearch so we only show Docsearch once in the docs sidebar.
         */}}
         {{ $show_search := site.Params.header.navbar.show_search | default true }}
         {{ if and site.Params.features.search.provider $show_search | and (ne (lower
         site.Params.features.search.provider) "docsearch") }}
-        <a class="nav-icon-link js-search" href="#" aria-label="{{ i18n " search" }}"><i class="nav-icon fas fa-search"
+        <a class="nav-icon-link js-search d-none d-lg-inline-flex" href="#" aria-label="{{ i18n " search" }}"><i class="nav-icon fas fa-search"
             aria-hidden="true"></i></a>
         {{ end }}
 
         {{ $show_day_night := site.Params.header.navbar.show_day_night | default true }}
         {{ $has_day_night_themes := (and site.Params.appearance.theme_day site.Params.appearance.theme_night) }}
         {{ if and $has_day_night_themes $show_day_night }}
-        <li class="nav-item dropdown theme-dropdown">
+        <div class="nav-item dropdown theme-dropdown">
           <a href="#" class="nav-icon-link" data-toggle="dropdown" aria-haspopup="true" aria-label="{{ i18n " theme_selector"
             | default "Display preferences" }}">
             <i class="nav-icon fas fa-moon" aria-hidden="true"></i>
@@ -211,12 +229,12 @@ or .Params.header.navbar.enable }}
               <span>{{ i18n "theme_auto" | default "Automatic" }}</span>
             </a>
           </div>
-        </li>
+        </div>
         {{ end }}
 
         {{ $show_translations := site.Params.header.navbar.show_translations | default true }}
         {{ if .IsTranslated | and $show_translations }}
-        <li class="nav-item dropdown i18n-dropdown">
+        <div class="nav-item dropdown i18n-dropdown">
           <a href="#" class="nav-icon-link {{ if $show_current_language }}dropdown-toggle{{end}}" data-toggle="dropdown"
             aria-haspopup="true" aria-label="{{ i18n " languages" | default "Languages" }}">
             <i class="nav-icon fas fa-globe mr-1" aria-hidden="true"></i>
@@ -235,8 +253,10 @@ or .Params.header.navbar.enable }}
             </a>
             {{ end }}
           </div>
-        </li>
+        </div>
         {{ end }}
+
+      </div><!-- /.nav-contact-icons -->
 
       </div>
 
