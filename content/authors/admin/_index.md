@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Jyothi Swaroop
+title: Jyothi Swaroop Kasina
 
 # Is this the primary user of the site?
 superuser: true

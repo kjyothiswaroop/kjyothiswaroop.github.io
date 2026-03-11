@@ -23,7 +23,7 @@
 
 <div class="card">
   {{ with $resource }}
-  {{ $image := .Resize "550x" }}
+  {{ $image := .Resize "350x" }}
   {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
   <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="card-image hover-overlay">
     <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}"
@@ -47,11 +47,13 @@
     </div>
     {{ end }}
 
+    {{/* Commented out attachment links for now
     {{ if $has_attachments }}
     <div class="card-divider"></div>
     <div class="btn-links">
       {{ partial "page_links" (dict "page" $item "is_list" 1) }}
     </div>
     {{ end }}
+    */}}
   </div>
 </div>

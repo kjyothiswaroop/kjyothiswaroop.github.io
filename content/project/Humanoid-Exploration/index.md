@@ -1,7 +1,7 @@
 ---
 type: project
-title: Autonomous Humanoid Exploration
-summary: Indoor SLAM and Autonomous Navigation on the Unitree G1 Humanoid
+title: SemOpenVoc-Nav
+summary: Open-Vocabulary Semantic Navigation for Indoor Environments
 tags:
   - C++
   - Python

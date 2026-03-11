@@ -55,7 +55,7 @@ body {
 }
 
 .home-section.wg-portfolio {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 }
 
 .home-section.wg-about-avatar {
@@ -94,7 +94,7 @@ ul.network-icon .big-icon {
   margin-bottom: 1em;
 }
 
-// Narrower container for Hello World sections (primarily Blank widget content).
+// Container width for home sections
 @media (min-width: 1200px) {
   .home-section .container {
     max-width: 880px;
@@ -107,7 +107,12 @@ ul.network-icon .big-icon {
   }
 }
 
-// Make portfolio section wideHellor for larger project cards
+// Wider container for the about/avatar section so text takes fewer lines
+.home-section.wg-about-avatar .container {
+  max-width: 1100px;
+}
+
+// Portfolio section container width
 .home-section.wg-portfolio .container {
   max-width: 1100px;
 }
